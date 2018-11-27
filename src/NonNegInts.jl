@@ -31,7 +31,7 @@ function NNInt64(x::I) where {I<:Signed}
     return NNInt{UInt64}(z)
 end
 
-function NNInt32(x::I) where {I<:Unsigned}
+function NNInt64(x::I) where {I<:Unsigned}
     x>typemax(UInt64) && throw(DomainError("$x"))
     z = x%UInt64
     return NNInt{UInt64}(z)
